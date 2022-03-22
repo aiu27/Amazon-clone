@@ -7,7 +7,7 @@
       Amazon Clone | 本,ファッション,家電から食品まで | Amazon Clone
     </title>
 
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./main.css" />
     <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
     <script
       src="https://kit.fontawesome.com/66f169a209.js"
@@ -131,12 +131,12 @@
               <img v-bind:src="image" />
             </div>
             <div class="product-info">
-              <p>ブランド:{{ brand }}</p>
-              <h1>{{ product }}</h1>
+              <p class="brand"><a href="">ブランド:{{ brand }}</a></p>
+              <h1 class="product">{{ product }}</h1>
               <hr />
               <p v-if="inventory <=10 && inventory > 0">Almost sold out!</p>
               <p v-else-if="inventory === 0">Out of Stock</p>
-              <p>価格:　￥{{ price }}</p>
+              <p class="price">価格:<span>￥{{ price }}</span></p>
               <p>サイズ:{{ size }}</p>
               <p>色名:{{ color }}</p>
               <img

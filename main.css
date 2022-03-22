@@ -49,9 +49,7 @@ footer {
   background: #232f3e;
 }
 
-/*  
-header BEGINS
-*/
+/* header BEIGNS */
 .nav-belt {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,7 +57,7 @@ header BEGINS
   height: 70px;
 }
 
-.nav-belt .line1 {
+.nav-belt .line {
   margin-bottom: 2px;
   display: block;
 }
@@ -104,7 +102,7 @@ header BEGINS
   margin-right: 15px;
 }
 
-.nav-left .fa-location-dot {
+.nav-left > .nav-location-dot {
   width: 17px;
   font-size: 18px;
   padding-top: 10px;
@@ -154,7 +152,7 @@ header BEGINS
   border-bottom-color: #dadada;
 }
 
-.nav-fill > .nav-search .navsearch-lebel {
+.nav-fill > .nav-search .nav-search-lebel {
   color: #777;
   display: block;
   font-size: 12px;
@@ -164,7 +162,7 @@ header BEGINS
 }
 
 .nav-fill > .nav-search .nav-left i {
-  position: absolute;
+  posision: absolute;
   top: 22px;
   left: 55px;
   color: #a0a0a0;
@@ -173,8 +171,8 @@ header BEGINS
 
 .nav-fill > .nav-search .nav-left select {
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   opacity: 0;
   height: 40px;
   display: block;
@@ -197,7 +195,7 @@ header BEGINS
 }
 
 .nav-fill > .nav-search .nav-right {
-  background: #febd69;
+  background: #fedb69;
   width: 45px;
   height: 40px;
   border-radius: 0 4px 4px 0;
@@ -284,7 +282,7 @@ header BEGINS
   position: absolute;
   left: 20px;
   top: 10px;
-  color: #f08804;
+  color: #f09904;
   width: 19px;
   font-weight: 700;
   text-align: center;
@@ -305,9 +303,7 @@ header BEGINS
   bottom: 22px;
 }
 
-/*
-nav-main 
-*/
+/*nav-main*/
 .nav-main {
   background: #232f3e;
   display: -webkit-box;
@@ -324,7 +320,7 @@ nav-main
   max-height: 39px;
 }
 
-.nav-main > .nav-left {
+.nav-main > .nav-legt {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -350,7 +346,7 @@ nav-main
 .nav-main > .nav-left span {
   font-weight: 700;
   font-size: 14px;
-  padding-left: 5px;
+  padding-legt: 5px;
 }
 
 .nav-main > .nav-fill {
@@ -375,8 +371,18 @@ nav-main
   cursor: pointer;
 }
 
-/*  header ENDS   */
-/*  main BEGINS */
+/* header ENDS */
+/* main BEIGNS */
+main .brand a {
+  color: #007185;
+}
+
+main .product {
+  min-width: 300px;
+  line-height: 1em;
+  font-weight: normal;
+}
+
 main hr {
   width: 500px;
 }
@@ -389,6 +395,10 @@ main .product-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+main .price span {
+  color: red;
 }
 
 main img {
@@ -417,13 +427,14 @@ main aside button {
   width: 250px;
   background: #ffd814;
   border: #fcd200;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(213, 217, 217, 0.5);
+          box-shadow: 0px 2px 5px 0px rgba(213, 217, 217, 0.5);
   border-radius: 30px;
   padding: 10px;
+  cursor: pointer;
 }
 
-/*  main ENDS   */
-/*  footer BEGINS */
-/*  footer ENDS   */
+/* main ENDS */
+/* footer BEIGNS */
+/* footer ENDS */
 /*# sourceMappingURL=main.css.map */

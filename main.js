@@ -6,7 +6,7 @@ const app = Vue.createApp({
       product: "リネンライク　ダブルジャケット　レディース",
       image: "./img/71U8fRqOPhL._AC_UL1500_.jpg",
       color: "MINT",
-      inventory: 0,
+      inventory: 100,
       price: 8690,
       size: "",
       variants: [

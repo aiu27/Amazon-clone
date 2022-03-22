@@ -50,15 +50,13 @@ footer {
   background: #232f3e;
 }
 
-/*  
-header BEGINS
-*/
+/* header BEIGNS */
 
 .nav-belt {
   display: flex;
   height: 70px;
 
-  .line1 {
+  .line {
     margin-bottom: 2px;
     display: block;
   }
@@ -97,7 +95,7 @@ header BEGINS
     margin-right: 15px;
   }
 
-  .fa-location-dot {
+  > .nav-location-dot {
     width: 17px;
     font-size: 18px;
     padding-top: 10px;
@@ -140,7 +138,7 @@ header BEGINS
       border-bottom-color: #dadada;
     }
 
-    .navsearch-lebel {
+    .nav-search-lebel {
       color: #777;
       display: block;
       font-size: 12px;
@@ -150,7 +148,7 @@ header BEGINS
     }
 
     .nav-left i {
-      position: absolute;
+      posision: absolute;
       top: 22px;
       left: 55px;
       color: #a0a0a0;
@@ -159,8 +157,8 @@ header BEGINS
 
     .nav-left select {
       position: absolute;
-      left: 0px;
-      top: 0px;
+      left: 0;
+      top: 0;
       opacity: 0;
       height: 40px;
       display: block;
@@ -183,7 +181,7 @@ header BEGINS
     }
 
     .nav-right {
-      background: #febd69;
+      background: #fedb69;
       width: 45px;
       height: 40px;
       border-radius: 0 4px 4px 0;
@@ -267,7 +265,7 @@ header BEGINS
     position: absolute;
     left: 20px;
     top: 10px;
-    color: #f08804;
+    color: #f09904;
     width: 19px;
     font-weight: 700;
     text-align: center;
@@ -289,10 +287,7 @@ header BEGINS
   }
 }
 
-/*
-nav-main 
-*/
-
+/*nav-main*/
 .nav-main {
   background: #232f3e;
   display: flex;
@@ -306,7 +301,7 @@ nav-main
     max-height: 39px;
   }
 
-  > .nav-left {
+  > .nav-legt {
     display: flex;
     float: none;
     width: auto;
@@ -328,7 +323,7 @@ nav-main
   > .nav-left span {
     font-weight: 700;
     font-size: 14px;
-    padding-left: 5px;
+    padding-legt: 5px;
   }
 
   > .nav-fill {
@@ -350,11 +345,20 @@ nav-main
   }
 }
 
-/*  header ENDS   */
+/* header ENDS */
 
-/*  main BEGINS */
-
+/* main BEIGNS */
 main {
+  .brand a {
+    color: #007185;
+  }
+
+  .product {
+    min-width: 300px;
+    line-height: 1em;
+    font-weight: normal;
+  }
+
   hr {
     width: 500px;
   }
@@ -365,6 +369,10 @@ main {
 
   .product-container {
     display: flex;
+  }
+
+  .price span {
+    color: red;
   }
 
   img {
@@ -393,14 +401,14 @@ main {
     width: 250px;
     background: #ffd814;
     border: #fcd200;
-    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    box-shadow: 0px 2px 5px 0px rgba(213, 217, 217, 0.5);
     border-radius: 30px;
     padding: 10px;
     cursor: pointer;
   }
 }
 
-/*  main ENDS   */
+/* main ENDS */
 
-/*  footer BEGINS */
-/*  footer ENDS   */
+/* footer BEIGNS */
+/* footer ENDS */
