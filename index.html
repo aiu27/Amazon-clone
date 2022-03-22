@@ -1,0 +1,188 @@
+<!DOCKTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Amazon Clone | 本,ファッション,家電から食品まで | Amazon Clone
+    </title>
+
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+    <script
+      src="https://kit.fontawesome.com/66f169a209.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <div class="nav-belt">
+          <div class="nav-left">
+            <div class="logo">
+              <a href="">
+                <img src="./img/amazonglogo.png" />
+                <span class="country-code">.co.jp</span>
+              </a>
+            </div>
+            <div class="nav-location">
+              <a href="">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="location">
+                  <span class="line1">こんにちは</span>
+                  <span class="line2">お届け先を選択</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="nav-fill">
+            <div class="nav-search">
+              <form>
+                <div class="nav-left">
+                  <span class="navsearch-lebel">すべて</span>
+                  <i class="fa-solid fa-caret-down"></i>
+                  <select class="navsearch-dropdown">
+                    <option selected="selected">すべてのカテゴリー</option>
+                    <option value="">Audible・オーディオブック</option>
+                    <option value="">Amazon フレッシュ</option>
+                    <option value="">ライフ</option>
+                    <option value="">Amazon デバイス</option>
+                    <option value="">Kindle ストア</option>
+                    <option value="">Prime Video</option>
+                    <option value="">Alexaスキル</option>
+                    <option value="">Amazon定期オトク便</option>
+                    <option value="">デジタルミュージック</option>
+                  </select>
+                </div>
+                <div class="nav-fill">
+                  <input type="text" autocomplete="off" />
+                </div>
+                <div class="nav-right">
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    aria-hidden="true"
+                  ></i>
+                  <input type="submit" />
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="nav-right">
+            <a
+              href=""
+              class="nav-lang"
+              aria-label="ショッピングのための言語を選択します。"
+            >
+              <img src="./img/jp.png" alt="flag" />
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <a href="" class="nav-login" aria-label="">
+              <span class="line1">こんにちは, ログイン</span>
+              <span class="line2"
+                >アカウント&amp;リスト
+                <i class="fa-solid fa-caret-down"></i>
+              </span>
+            </a>
+            <a href="" class="nav-history">
+              <span class="line1">返品もこちら</span>
+              <span class="line2">注文履歴</span>
+            </a>
+            <a href="" class="nav-cart" aria-label="カート内の商品数">
+              <div>
+                <span class="navcart-count">{{ cart }}</span>
+                <img src="./img/cart.png" alt="cart" />
+              </div>
+              <span class="line2">カート</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="nav-main">
+          <div class="nav-left">
+            <a href="">
+              <i class="fa-solid fa-bars"></i>
+              <span class="hmlabel">すべて</span>
+            </a>
+          </div>
+          <div class="nav-fill">
+            <a class="nav-a"
+              >Amazonポイント
+              <span class="nav-span">：残高を確認</span>
+            </a>
+            <a class="nav-a">ランキング</a>
+            <a class="nav-a">Amazon Basics</a>
+          </div>
+          <div class="nav-right">
+            <a href=""
+              ><img
+                src="https://images-fe.ssl-images-amazon.com/images/G/09/Digital_Video/svod/2018H1/CrossSite/SWM/swm_400x39_180701_WOCTA._CB485945278_.png"
+                alt="プライム会員特典"
+            /></a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <div class="product-display">
+          <div class="product-container">
+            <div class="product-image">
+              <img v-bind:src="image" />
+            </div>
+            <div class="product-info">
+              <p>ブランド:{{ brand }}</p>
+              <h1>{{ product }}</h1>
+              <hr />
+              <p v-if="inventory <=10 && inventory > 0">Almost sold out!</p>
+              <p v-else-if="inventory === 0">Out of Stock</p>
+              <p>価格:　￥{{ price }}</p>
+              <p>サイズ:{{ size }}</p>
+              <p>色名:{{ color }}</p>
+              <img
+                class="color"
+                v-bind:src="variant.image"
+                v-for="variant in variants"
+                :key="variant.id"
+                @mouseover="updateImage(variant.image); updateColor(variant.color);"
+              />
+
+              <ul>
+                <li v-for="detail in details">{{ detail }}</li>
+              </ul>
+            </div>
+
+            <!-- Cart BEGINS-->
+            <aside>
+              <p>購入するには、<br />サイズを選択してください。</p>
+              <button
+                class="button"
+                :disabled="inventory === 0"
+                v-on:click="addToCart"
+              >
+                カートに入れる
+              </button>
+            </aside>
+            <!-- Cart ENDS-->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <div class="footer-top">トップへ戻る</div>
+      <div class="footer-middle">
+        Amazonについて　Amazonでビジネス　Amazonでのお支払い　ヘルプ&amp;ガイド
+      </div>
+      <div class="footer-bottom">利用規約｜プライバシー規約</div>
+    </footer>
+
+    <!-- Import App-->
+    <script src="./main.js"></script>
+
+    <!-- Mount App-->
+    <script>
+      const mountedApp = app.mount("#app");
+    </script>
+  </body>
+</html>
