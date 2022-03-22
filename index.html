@@ -137,8 +137,8 @@
               <p v-if="inventory <=10 && inventory > 0">Almost sold out!</p>
               <p v-else-if="inventory === 0">Out of Stock</p>
               <p class="price">価格:<span>￥{{ price }}</span></p>
-              <p>サイズ:{{ size }}</p>
-              <p>色名:{{ color }}</p>
+              <p><span class="bold">サイズ:</span>{{ size }}</p>
+              <p><span class="bold">色名:</span>{{ color }}</p>
               <img
                 class="color"
                 v-bind:src="variant.image"
